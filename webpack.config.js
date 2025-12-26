@@ -2,8 +2,13 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 
+const isProduction = process.env.NODE_ENV === 'production';
+const customMainUrl = isProduction 
+  ? 'https://custom.shoaibarif.site/remoteEntry.js'
+  : 'http://localhost:5000/remoteEntry.js';
+
 module.exports = {
-  mode: "development",
+  mode: isProduction ? "production" : "development",
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -36,7 +41,7 @@ module.exports = {
       name: "postClearanceAudit",
       filename: "remoteEntry.js",
       remotes: {
-        customMain: "customMain@http://localhost:5000/remoteEntry.js"
+        customMain: `customMain@${customMainUrl}`
       },
       exposes: {
         "./App": "./src/App.tsx"

@@ -1,0 +1,7 @@
+# Serve remoteEntry.js and assets
+/remoteEntry.js  /remoteEntry.js  200
+/*.js  /:splat.js  200
+/*.css  /:splat.css  200
+
+# Redirect all other requests to the main shell
+/*  https://custom.shoaibarif.site  301
