@@ -15,20 +15,7 @@
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Redirect direct access to the main shell application
-[[redirects]]
-  from = "/*"
-  to = "https://custom.shoaibarif.site"
-  status = 301
-  force = false
-  conditions = {Role = ["visitor"]}
-
-# Allow access to remoteEntry.js and other assets
-[[redirects]]
-  from = "/remoteEntry.js"
-  to = "/remoteEntry.js"
-  status = 200
-
+# Serve all JS and CSS files first (most specific rules first)
 [[redirects]]
   from = "/*.js"
   to = "/:splat.js"
@@ -38,3 +25,19 @@
   from = "/*.css"
   to = "/:splat.css"
   status = 200
+
+[[redirects]]
+  from = "/*.map"
+  to = "/:splat.map"
+  status = 200
+
+# Redirect HTML page requests to the main shell
+[[redirects]]
+  from = "/index.html"
+  to = "https://custom.shoaibarif.site"
+  status = 301
+
+[[redirects]]
+  from = "/"
+  to = "https://custom.shoaibarif.site"
+  status = 301
