@@ -14,6 +14,7 @@ module.exports = (env, argv) => {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
+    chunkFilename: "[name].chunk.js",
     publicPath: "auto",
     clean: true
   },
