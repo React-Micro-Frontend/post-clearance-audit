@@ -47,7 +47,7 @@ export default function App() {
 
       {/* Shared Redux Counter Demo */}
       <Card className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">🔗 Shared Redux Counter</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 bg-violet-200">🔗 Shared Redux Counter</h2>
         <p className="text-gray-600 mb-4">
           This counter is shared across all micro-frontends via Module Federation!
           <br />
