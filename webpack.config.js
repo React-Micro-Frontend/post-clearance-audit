@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = (env, argv) => {
@@ -51,10 +50,6 @@ module.exports = (env, argv) => {
           requiredVersion: false
         }
       }
-    }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      title: "Post Clearance Audit"
     })
   ],
   devServer: {

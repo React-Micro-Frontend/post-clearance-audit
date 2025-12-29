@@ -1,8 +1,0 @@
-# Serve all assets (JS, CSS, maps) - most specific rules first
-/*.js  /:splat.js  200
-/*.css  /:splat.css  200
-/*.map  /:splat.map  200
-
-# Redirect HTML page requests to the main shell
-/index.html  https://custom.shoaibarif.site  301
-/  https://custom.shoaibarif.site  301
